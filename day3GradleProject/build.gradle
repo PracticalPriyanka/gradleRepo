@@ -1,0 +1,46 @@
+
+// Apply the java plugin to add support for Java
+apply plugin: 'java'
+
+
+group = 'BankAppGradle'
+version = '0.0.1-SNAPSHOT'
+
+description = """"""
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+repositories {
+   maven { url "http://repo.maven.apache.org/maven2" }
+}
+
+
+dependencies {
+   compile 'org.mockito:mockito-all:1.10.19'
+    testCompile 'junit:junit:4.12'
+  //  compile group: 'org.springframework', name: 'spring-core', version: '3.2.16.RELEASE'
+    
+}
+
+
+//Gradle version
+task wrapper(type: Wrapper){
+	gradleVersion = '2.6'
+}
+
+
+
+task hello(group:'Greetings',description:'Hello World Task'){
+	
+	println 'Hello World! Gradle Application'
+}<<{
+	println 'Hello Task Completed'
+}
+
+
+
+
+
+
